@@ -1,12 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import Router from './Router'
+import { Routes, Route } from 'react-router-dom'
+import App from './App'
+import Navbar from '../src/components/Navbar/Navbar.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
-  </StrictMode>
-)
+const Router = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/navbar" element={<Navbar />} />
+    </Routes>
+  )
+}
+
+export default Router
